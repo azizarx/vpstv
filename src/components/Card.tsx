@@ -18,19 +18,24 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { useSearchParams } from 'react-router-dom';
+
 
 export function ShowCard() {
-  return (
-    <Card className="w-[350px]  " >
+    const [searchParams, setSearchParams] = useSearchParams();
+    const name = searchParams.get('name');
+
+  return (  
+    <Card className="w-[350px]">
       <CardHeader>
-        <CardTitle>Spiderman: Miles Morales</CardTitle>
+        <CardTitle>{name}</CardTitle>
         <CardDescription>Black Spiderman escaping the cops</CardDescription>
       </CardHeader>
       <CardContent>
        <div className="grid w-full items-center gap-4">
         <Label htmlFor="name">Miles Morales</Label>
         <div >
-        <img id="name" src="https://i.pinimg.com/564x/03/03/cb/0303cb902668afe4ac55343d21820c8e.jpg" className="h-[400px] w-[250px] align-middle"  />
+        <img id="name" src="https://i.pinimg.com/564x/03/03/cb/0303cb902668afe4ac55343d21820c8e.jpg" className="h-[400px] w-[250px] align-middle" alt="imagep" />
         </div>
        </div>
        
